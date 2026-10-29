@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags -->
+  <title>Mukkamalla Manasa Reddy |  Software Engineer | Portfolio</title>
+  <meta name="description" content="Personal portfolio of Mukkamalla Manasa Reddy - Aspiring Software Engineer & B.Tech CSE (Data Science) graduate from Malla Reddy Engineering College. Skilled in Python, Java, Web Development, Machine Learning, and SQL.">
+  <meta name="keywords" content="Mukkamalla Manasa Reddy, Manasa Reddy, Software Engineer, Data Science, Python, Java, React, OpenCV, Machine Learning, Portfolio, Hyderabad, Andhra Pradesh">
+  <meta name="author" content="Mukkamalla Manasa Reddy">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mukkamalla Manasa Reddy | Aspiring Software Engineer Portfolio">
+  <meta property="og:description" content="Explore projects, technical skills, education, and certifications of Mukkamalla Manasa Reddy, B.Tech CSE (Data Science) 2025 graduate.">
+  <meta property="og:image" content="assets/profile.jpg">
+
+  <!-- Favicon (SVG encoded) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%238b5cf6'/><stop offset='100%' stop-color='%230d9488'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23g)'/><text x='50' y='65' font-family='Arial, sans-serif' font-size='48' font-weight='bold' fill='%23ffffff' text-anchor='middle'>MR</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans for UI clarity, Outfit for display titles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Background Glows -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper" id="header">
+    <div class="container navbar">
+      <a href="#home" class="logo" aria-label="Manasa Reddy Homepage">
+        <span class="logo-badge">MR</span>
+        <span class="logo-text">Manasa<span class="text-accent">.dev</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-links" id="navMenu" aria-label="Primary Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Navbar Resume CTA -->
+        <a href="assets/Manasa_Reddy_Resume.pdf" download="M_Manasa_Reddy_Resume.pdf" class="btn btn-outline btn-sm nav-resume-btn" id="navResumeBtn">
+          <span>Resume</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO / HOME SECTION -->
+    <section id="home" class="hero-section">
+      <div class="container hero-container">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <div class="status-pill" data-aos="fade-up">
+            <span class="status-dot"></span>
+            <span>Available for Software Engineer Roles</span>
+          </div>
+
+          <h1 class="hero-title" data-aos="fade-up">
+            Hi, I'm <br>
+            <span class="gradient-text">Mukkamalla Manasa Reddy</span>
+          </h1>
+
+          <div class="hero-role-wrapper" data-aos="fade-up">
+            <span class="role-prefix">I am an</span>
+            <span class="role-badge">Aspiring Software Engineer</span>
+          </div>
+
+          <p class="hero-description" data-aos="fade-up">
+            B.Tech in Computer Science Engineering (Data Science) from <strong>Malla Reddy Engineering College, Hyderabad</strong> (Graduating 2025). Passionate about developing scalable software solutions, intelligent machine learning models, and interactive user experiences.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta-group" data-aos="fade-up">
+            <a href="#projects" class="btn btn-primary" id="btnHeroProjects">
+              <span>View Projects</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary" id="btnHeroContact">
+              <span>Contact Me</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+            <a href="assets/Manasa_Reddy_Resume.pdf" download="M_Manasa_Reddy_Resume.pdf" class="btn btn-outline" id="btnHeroResume" title="Download Official Resume">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Resume</span>
+            </a>
+          </div>
+
+          <!-- Quick Highlights Row -->
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <span class="metric-val">7.53</span>
+              <span class="metric-lbl">B.Tech CGPA</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-val">2025</span>
+              <span class="metric-lbl">Graduation Year</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-val">3+</span>
+              <span class="metric-lbl">Core Projects</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-val">AZ-900</span>
+              <span class="metric-lbl">Azure Certified</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="hero-visual" data-aos="fade-left">
+          <div class="profile-card-glow">
+            <div class="profile-card">
+              <div class="profile-image-container">
+                <img src="assets/profile.jpg" alt="Mukkamalla Manasa Reddy" class="profile-image" id="heroProfileImg" onerror="this.onerror=null; this.src=''; this.classList.add('img-error');">
+                <!-- Fallback Avatar Placeholder -->
+                <div class="profile-avatar-fallback" aria-hidden="true">
+                  <span class="fallback-initials">MR</span>
+                  <span class="fallback-caption">Manasa Reddy</span>
+                </div>
+              </div>
+
+              <!-- Floating Quick Badges -->
+              <div class="floating-badge badge-top-right">
+                <span class="badge-icon">📍</span>
+                <span>Andhra Pradesh, India</span>
+              </div>
+              <div class="floating-badge badge-bottom-left">
+                <span class="badge-icon">🎓</span>
+                <span>B.Tech CSE (DS)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get To Know Me</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <p class="section-subtitle">Dedicated computer science graduate equipped with algorithmic problem-solving skills and a passion for modern software engineering.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Quick Profile Highlights Card -->
+          <div class="about-card-wrapper">
+            <div class="about-visual-card">
+              <div class="about-avatar-mini">
+                <img src="assets/profile.jpg" alt="Mukkamalla Manasa Reddy portrait" class="mini-profile-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="mini-fallback-avatar" style="display:none;">
+                  <span>MR</span>
+                </div>
+              </div>
+              <h3 class="about-card-name">Mukkamalla Manasa Reddy</h3>
+              <p class="about-card-role">Aspiring Software Engineer</p>
+
+              <div class="about-card-meta">
+                <div class="meta-row">
+                  <span class="meta-icon">🎓</span>
+                  <span class="meta-label">Degree:</span>
+                  <span class="meta-value">B.Tech in CSE (Data Science)</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-icon">🏛️</span>
+                  <span class="meta-label">College:</span>
+                  <span class="meta-value">Malla Reddy Engg. College</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-icon">📍</span>
+                  <span class="meta-label">Location:</span>
+                  <span class="meta-value">Andhra Pradesh, India</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-icon">✉️</span>
+                  <span class="meta-label">Email:</span>
+                  <a href="mailto:reddymanasa0271@gmail.com" class="meta-link">reddymanasa0271@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="about-social-strip">
+                <a href="https://www.linkedin.com/in/mukkamalla-manasa-reddy-b2181527a" target="_blank" rel="noopener noreferrer" class="social-btn-link" title="LinkedIn Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.2a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+                  <span>Connect on LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Narrative & Pillars -->
+          <div class="about-details">
+            <h3 class="about-subheading">Bridging Analytical Rigor with Creative Software Development</h3>
+            <p class="about-text">
+              I am a driven and ambitious Computer Science and Engineering student specializing in <strong>Data Science</strong> at Malla Reddy Engineering College, Hyderabad, graduating in 2025 with an academic record of <strong>7.53 CGPA</strong>.
+            </p>
+            <p class="about-text">
+              My technical journey blends strong foundations in core programming languages like <strong>Python and Java</strong> with hands-on practice in <strong>Data Structures, Relational Databases (SQL), and Modern Web Development</strong>. I am fascinated by the intersection of intelligent algorithms and human-centered user interfaces.
+            </p>
+            <p class="about-text">
+              Whether developing computer vision tools with OpenCV, forecasting financial metrics through deep learning LSTM networks, or architecting intuitive web systems, I am dedicated to writing clean, maintainable, and high-performance code. My goal is to launch my career as a full-time <strong>Software Engineer</strong> where I can collaborate with talented engineering teams and build software that creates measurable real-world impact.
+            </p>
+
+            <!-- Key Pillars Cards -->
+            <div class="about-pillars">
+              <div class="pillar-card">
+                <div class="pillar-icon">💻</div>
+                <div class="pillar-content">
+                  <h4>Software Development</h4>
+                  <p>Building structured, reliable applications in Python and Java adhering to object-oriented principles and clean code practices.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-icon">🧠</div>
+                <div class="pillar-content">
+                  <h4>Data Science & ML</h4>
+                  <p>Leveraging machine learning algorithms, OpenCV for computer vision, and neural network architectures for predictive intelligence.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-icon">🌐</div>
+                <div class="pillar-content">
+                  <h4>Web Engineering</h4>
+                  <p>Crafting responsive, accessible user interfaces with semantic HTML5, CSS3, modern JavaScript, and React.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EDUCATION SECTION -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Milestones</span>
+          <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+          <p class="section-subtitle">Consistent academic record demonstrating a strong commitment to learning and technical excellence.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1: B.Tech -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-badge-row">
+                <span class="timeline-year">2021 – 2025</span>
+                <span class="timeline-grade grade-highlight">CGPA: 7.53 / 10</span>
+              </div>
+              <h3 class="timeline-degree">Bachelor of Technology (B.Tech)</h3>
+              <p class="timeline-stream">Computer Science and Engineering (Data Science)</p>
+              <div class="timeline-inst">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Malla Reddy Engineering College, Hyderabad, Telangana</span>
+              </div>
+              <p class="timeline-desc">
+                Specialized in Computer Science with advanced coursework in Data Structures & Algorithms, Machine Learning, Database Management Systems, Object-Oriented Programming (Java/Python), Computer Networks, and Web Technologies.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Data Science</span>
+                <span class="tag">Algorithms</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Python & Java</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: Intermediate -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-badge-row">
+                <span class="timeline-year">2019 – 2021</span>
+                <span class="timeline-grade">Score: 678 / 1000</span>
+              </div>
+              <h3 class="timeline-degree">Higher Secondary Education (Intermediate)</h3>
+              <p class="timeline-stream">Maths, Physics, and Chemistry (MPC Stream)</p>
+              <div class="timeline-inst">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Narayana Junior College, Hyderabad (TSBIE)</span>
+              </div>
+              <p class="timeline-desc">
+                Developed strong analytical reasoning, mathematical logic, and scientific problem-solving abilities under the Telangana State Board of Intermediate Education curriculum.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Mathematics</span>
+                <span class="tag">Physics</span>
+                <span class="tag">Chemistry</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: School SSC -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <div class="dot-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-badge-row">
+                <span class="timeline-year">Graduated 2019</span>
+                <span class="timeline-grade grade-highlight">GPA: 9.8 / 10</span>
+              </div>
+              <h3 class="timeline-degree">Secondary School Certificate (SSC / 10th Standard)</h3>
+              <p class="timeline-stream">General Studies & Sciences</p>
+              <div class="timeline-inst">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Narayana English Medium School, Kurnool, Andhra Pradesh (BSEAP)</span>
+              </div>
+              <p class="timeline-desc">
+                Completed secondary school education with distinction, securing an exceptional 9.8 GPA with honors in mathematics and sciences.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Academic Distinction</span>
+                <span class="tag">Leadership</span>
+                <span class="tag">Sciences</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SKILLS SECTION -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Core Competencies</span>
+          <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+          <p class="section-subtitle">Proficiencies acquired through hands-on academic projects, software coursework, and continuous practice.</p>
+        </div>
+
+        <!-- Skill Category Filter Buttons -->
+        <div class="filter-controls" role="tablist" aria-label="Skills Category Filter">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Skills</button>
+          <button class="filter-btn" data-filter="prog" role="tab" aria-selected="false">Programming Languages</button>
+          <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">Front-End Development</button>
+          <button class="filter-btn" data-filter="database" role="tab" aria-selected="false">Database</button>
+          <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false">Machine Learning & AI</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skillsGrid">
+          <!-- 1. Python -->
+          <div class="skill-card" data-category="prog">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-python">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M11.95 2C6.46 2 6.69 4.39 6.69 4.39L6.7 6.87H12.1V7.64H4.27S2 7.39 2 12.87C2 18.36 3.98 18.1 3.98 18.1H5.47V15.75S5.39 12.87 8.35 12.87H13.73S16.48 12.96 16.48 10.33V4.65S16.82 2 11.95 2M8.9 3.65A.96.96 0 0 1 9.86 4.61A.96.96 0 0 1 8.9 5.57A.96.96 0 0 1 7.94 4.61A.96.96 0 0 1 8.9 3.65M12.05 22C17.54 22 17.31 19.61 17.31 19.61L17.3 17.13H11.9V16.36H19.73S22 16.61 22 11.13C22 5.64 20.02 5.9 20.02 5.9H18.53V8.25S18.61 11.13 15.65 11.13H10.27S7.52 11.04 7.52 13.67V19.35S7.18 22 12.05 22M15.1 20.35A.96.96 0 0 1 14.14 19.39A.96.96 0 0 1 15.1 18.43A.96.96 0 0 1 16.06 19.39A.96.96 0 0 1 15.1 20.35Z"/></svg>
+              </div>
+              <span class="skill-category-tag">Languages</span>
+            </div>
+            <h3 class="skill-name">Python</h3>
+            <p class="skill-summary">Core language for machine learning, OpenCV automation, scripting, and backend algorithms.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-teal">Advanced</span>
+            </div>
+          </div>
+
+          <!-- 2. Java -->
+          <div class="skill-card" data-category="prog">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-java">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M7.74 15.2c.07.03 1.8.44 2.89.47 2.06.07 3.52-.38 5.48-1.55.35-.2.62-.22.68-.07.07.16-.14.4-.33.56-1.92 1.58-3.9 1.83-6.26 1.7-1.39-.07-2.34-.33-2.67-.53-.19-.11-.2-.41-.09-.54.08-.07.2-.07.3-.04m-.35 2.53c-.09-.12-.02-.38.16-.48.24-.13 1.25-.32 2.65-.29 1.83.05 3.3.43 4.96-.54.19-.11.4-.04.45.15.06.2-.1.38-.28.49-1.9 1.15-3.69 1.04-5.87.89-1.35-.09-1.95-.14-2.07-.22m7.13-7.51c.64 1.28-.15 2.45-1.74 3.65-1.28.97-2.73 1.55-4.47 1.5-1.42-.04-2.47-.48-2.61-.69-.14-.2-.04-.47.16-.54.21-.06.75.14 2.14.28 1.54.15 2.87-.29 4.09-1.13 1.24-.86 1.76-1.63 1.48-2.31-.38-.93-1.89-1.43-2.73-1.63-.35-.08-.57-.37-.47-.64.1-.27.4-.41.74-.32 1.44.37 2.84 1.02 3.4 1.83M12.95 2c.4 1.34-.35 2.38-1.62 3.47-1.12.96-2.42 1.62-3.87 1.63-.99.01-1.66-.25-1.75-.43-.09-.18-.03-.43.14-.5.17-.06.6.09 1.61.16 1.26.09 2.37-.36 3.39-1.14 1.01-.78 1.48-1.46 1.25-2.07-.29-.78-1.4-1.21-2.07-1.4-.29-.08-.47-.35-.38-.58.08-.24.34-.37.62-.29 1.24.36 2.34.98 2.68 1.15M8.45 20.89c-.06-.11.02-.33.19-.4.18-.07.9-.17 1.89-.13 1.3.06 2.41.34 3.71-.35.15-.08.31-.03.35.1.05.14-.07.28-.2.37-1.51.87-2.92.83-4.57.65-.96-.11-1.31-.17-1.37-.24M20.2 17.58c-.16.33-.8.64-1.46.7-1.02.1-1.87-.22-2.19-.38-.3-.15-.4-.44-.22-.67.17-.23.49-.24.81-.13.34.12.9.23 1.5.09.43-.1.52-.3.44-.45-.14-.28-.79-.58-1.42-.8-1.57-.55-2.61-1.56-2.4-2.82.19-1.14 1.27-1.92 2.68-1.92.61 0 1.23.15 1.76.43.34.18.43.51.22.75-.2.24-.54.21-.86.08-.34-.14-.73-.24-1.12-.24-.9 0-1.49.43-1.6 1.05-.12.7.45 1.28 1.51 1.65.94.33 2.15.82 2.34 1.7.09.41.02.82-.19 1.01z"/></svg>
+              </div>
+              <span class="skill-category-tag">Languages</span>
+            </div>
+            <h3 class="skill-name">Java</h3>
+            <p class="skill-summary">Object-Oriented Programming, multi-threading basics, collections framework, and clean design patterns.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-purple">Intermediate</span>
+            </div>
+          </div>
+
+          <!-- 3. Data Structures -->
+          <div class="skill-card" data-category="prog">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-dsa">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              </div>
+              <span class="skill-category-tag">Languages</span>
+            </div>
+            <h3 class="skill-name">Data Structures</h3>
+            <p class="skill-summary">Arrays, Linked Lists, Stacks, Queues, Trees, Hash Tables, and searching/sorting algorithmic complexity.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-teal">Advanced</span>
+            </div>
+          </div>
+
+          <!-- 4. HTML5 -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-html">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 17.56L7.33 16.27L6.96 12.1H9.27L9.45 14.18L12 14.87L14.55 14.18L14.83 11.05H4.82L4.35 5.82H19.65L19.46 7.91H7.07L7.26 10.09H17.06L16.63 14.86L12 17.56M3 2L5 20.36L12 22L19 20.36L21 2H3Z"/></svg>
+              </div>
+              <span class="skill-category-tag">Front-End</span>
+            </div>
+            <h3 class="skill-name">HTML5</h3>
+            <p class="skill-summary">Semantic structuring, accessibility (WCAG), clean document hierarchy, and SEO best practices.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-teal">Advanced</span>
+            </div>
+          </div>
+
+          <!-- 5. CSS3 -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-css">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M5 2L3 20.36L12 22L21 20.36L19 2H5M16.92 7.91L16.63 11.05H9.45L9.63 13.13L12 13.82L14.37 13.13L14.55 11.05H16.86L16.49 15.22L12 16.51L7.51 15.22L7.08 10.45H16.69L16.88 8.36H6.89L6.7 6.27H17.07L16.92 7.91Z"/></svg>
+              </div>
+              <span class="skill-category-tag">Front-End</span>
+            </div>
+            <h3 class="skill-name">CSS3</h3>
+            <p class="skill-summary">Modern Flexbox, CSS Grid, custom properties, responsive design, animations, and glassmorphic UI.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-teal">Advanced</span>
+            </div>
+          </div>
+
+          <!-- 6. JavaScript -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-js">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M3 3H21V21H3V3M7.5 17.5C8.88 17.5 10 16.38 10 15V9H8.5V15C8.5 15.55 8.05 16 7.5 16C6.95 16 6.5 15.55 6.5 15V13.5H5V15C5 16.38 6.12 17.5 7.5 17.5M16.5 17.5C18.2 17.5 19.5 16.3 19.5 14.7C19.5 13.3 18.6 12.6 17.1 12C16 11.5 15.3 11.1 15.3 10.4C15.3 9.8 15.8 9.3 16.5 9.3C17.2 9.3 17.7 9.7 17.8 10.5H19.3C19.2 8.9 18 8 16.5 8C15 8 13.8 9.1 13.8 10.5C13.8 11.8 14.6 12.5 16.1 13.1C17.3 13.6 18 14.1 18 14.9C18 15.6 17.3 16.2 16.5 16.2C15.6 16.2 15 15.6 14.9 14.7H13.4C13.5 16.3 14.8 17.5 16.5 17.5Z"/></svg>
+              </div>
+              <span class="skill-category-tag">Front-End</span>
+            </div>
+            <h3 class="skill-name">JavaScript (ES6+)</h3>
+            <p class="skill-summary">DOM manipulation, asynchronous fetch APIs, event-driven programming, and modular structure.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-teal">Intermediate</span>
+            </div>
+          </div>
+
+          <!-- 7. React -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-react">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2M12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4M12 9A3 3 0 1 1 9 12A3 3 0 0 1 12 9Z"/></svg>
+              </div>
+              <span class="skill-category-tag">Front-End</span>
+            </div>
+            <h3 class="skill-name">React</h3>
+            <p class="skill-summary">Component-based architecture, hooks (useState, useEffect), state management, and reusable UI components.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-purple">Intermediate</span>
+            </div>
+          </div>
+
+          <!-- 8. SQL -->
+          <div class="skill-card" data-category="database">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-sql">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              </div>
+              <span class="skill-category-tag">Database</span>
+            </div>
+            <h3 class="skill-name">SQL</h3>
+            <p class="skill-summary">Relational database design, complex queries, joins, indexing, normalization, and data integrity.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-teal">Advanced</span>
+            </div>
+          </div>
+
+          <!-- 9. OpenCV -->
+          <div class="skill-card" data-category="ml">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-opencv">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              </div>
+              <span class="skill-category-tag">Machine Learning</span>
+            </div>
+            <h3 class="skill-name">OpenCV</h3>
+            <p class="skill-summary">Real-time computer vision, hand landmark tracking, image preprocessing, and gesture-driven controller automation.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-teal">Advanced</span>
+            </div>
+          </div>
+
+          <!-- 10. Machine Learning -->
+          <div class="skill-card" data-category="ml">
+            <div class="skill-top">
+              <div class="skill-icon-wrapper color-ml">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4c0 .88-.3 1.69-.8 2.33l2.87 2.87A3.98 3.98 0 0 1 22 14a4 4 0 0 1-4 4 3.98 3.98 0 0 1-2.8-1.13l-2.87 2.87c.43.64.67 1.41.67 2.26a4 4 0 1 1-8 0c0-.85.24-1.62.67-2.26l-2.87-2.87A3.98 3.98 0 0 1 2 14a4 4 0 0 1 4-4c.85 0 1.62.24 2.26.67l2.87-2.87A3.98 3.98 0 0 1 12 2z"></path></svg>
+              </div>
+              <span class="skill-category-tag">Machine Learning</span>
+            </div>
+            <h3 class="skill-name">Machine Learning</h3>
+            <p class="skill-summary">Supervised learning, classification algorithms, feature engineering, evaluation metrics, and LSTM deep learning models.</p>
+            <div class="skill-level-row">
+              <span class="level-text">Proficiency</span>
+              <span class="level-badge badge-teal">Advanced</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PROJECTS SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Portfolio</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-subtitle">Real-world academic systems developed using Python, Computer Vision, Machine Learning, and Web Technologies.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Loan Eligibility Checking -->
+          <article class="project-card">
+            <div class="project-banner project-banner-loan">
+              <div class="project-banner-overlay"></div>
+              <div class="project-category-chip">FinTech & ML</div>
+              <div class="project-icon-art">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><circle cx="7" cy="15" r="1.5"></circle><line x1="12" y1="15" x2="17" y2="15"></line></svg>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Loan Eligibility Checking – Dynamic System</h3>
+              <p class="project-description">
+                An intelligent credit scoring and automated loan approval evaluation system that processes applicant financial criteria, evaluates credit risk factors, and predicts loan eligibility dynamically using machine learning decision logic.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">Machine Learning</span>
+                <span class="tech-pill">Data Preprocessing</span>
+                <span class="tech-pill">HTML / CSS</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-primary btn-sm btn-project-details" data-project="loan">
+                  <span>View Project Details</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Hand Gesture Controller -->
+          <article class="project-card">
+            <div class="project-banner project-banner-gesture">
+              <div class="project-banner-overlay"></div>
+              <div class="project-category-chip">Computer Vision</div>
+              <div class="project-icon-art">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Hand Gesture Controller using Python and OpenCV</h3>
+              <p class="project-description">
+                Engineered a touchless computer vision controller using OpenCV in Python that detects hand landmarks in real-time, translating spatial movements into desktop and media playback actions (volume control, playback toggle, navigation).
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">OpenCV</span>
+                <span class="tech-pill">Computer Vision</span>
+                <span class="tech-pill">Media Automation</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-primary btn-sm btn-project-details" data-project="gesture">
+                  <span>View Project Details</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Stock Price Prediction -->
+          <article class="project-card">
+            <div class="project-banner project-banner-stock">
+              <div class="project-banner-overlay"></div>
+              <div class="project-category-chip">Deep Learning</div>
+              <div class="project-icon-art">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line><path d="M4 10l6-6 4 4 6-6"></path></svg>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Stock Price Prediction using LSTM</h3>
+              <p class="project-description">
+                Designed a sequential deep learning forecasting architecture using Long Short-Term Memory (LSTM) recurrent neural networks to model non-linear financial time-series trends and predict stock market closing price movements.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">LSTM Networks</span>
+                <span class="tech-pill">Time-Series Analysis</span>
+                <span class="tech-pill">Data Visualisation</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="btn btn-primary btn-sm btn-project-details" data-project="stock">
+                  <span>View Project Details</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CERTIFICATIONS SECTION -->
+    <section id="certifications" class="section certs-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Credentials & Badges</span>
+          <h2 class="section-title">Certifications & <span class="gradient-text">Recognitions</span></h2>
+          <p class="section-subtitle">Verified professional credentials certifying technical competencies in cloud computing, data structures, and programming.</p>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Cert 1: Azure AZ-900 -->
+          <div class="cert-card">
+            <div class="cert-header">
+              <div class="cert-badge-icon azure-badge">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M13.05 4.24l-4.52 7.74 3.4 5.95 7.6-13.69h-6.48zm-2.1 3.59l-6.57 11.23h5.92l4.43-7.58-3.78-3.65zm1.59 11.93h5.81l-3.32-5.7-2.49 5.7z"/></svg>
+              </div>
+              <span class="cert-status-badge">Certified</span>
+            </div>
+            <h3 class="cert-name">Microsoft Azure Fundamentals (AZ-900)</h3>
+            <p class="cert-issuer">Microsoft Certified</p>
+            <p class="cert-details">
+              Demonstrates foundational understanding of cloud concepts, core Azure services, security, privacy, compliance, and cloud pricing architectures.
+            </p>
+            <div class="cert-tags">
+              <span class="cert-tag">Cloud Infrastructure</span>
+              <span class="cert-tag">Azure Security</span>
+              <span class="cert-tag">Microsoft Certified</span>
+            </div>
+          </div>
+
+          <!-- Cert 2: Tutor Campus -->
+          <div class="cert-card">
+            <div class="cert-header">
+              <div class="cert-badge-icon tutor-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <span class="cert-status-badge">Completed</span>
+            </div>
+            <h3 class="cert-name">Tutor Campus Certification</h3>
+            <p class="cert-issuer">Tutors Campus</p>
+            <p class="cert-details">
+              Comprehensive course completion covering Data Structures and Algorithms, asymptotic analysis, linear and non-linear memory representations, and problem-solving.
+            </p>
+            <div class="cert-tags">
+              <span class="cert-tag">Data Structures</span>
+              <span class="cert-tag">Algorithms</span>
+              <span class="cert-tag">Problem Solving</span>
+            </div>
+          </div>
+
+          <!-- Cert 3: Skilltimate Technologies -->
+          <div class="cert-card">
+            <div class="cert-header">
+              <div class="cert-badge-icon skill-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <span class="cert-status-badge">Completed</span>
+            </div>
+            <h3 class="cert-name">Skilltimate Technologies Certification</h3>
+            <p class="cert-issuer">Skilltimate Technologies</p>
+            <p class="cert-details">
+              Verified technical training covering Python Programming Language fundamentals, object-oriented concepts, functional paradigms, and computational problem solving.
+            </p>
+            <div class="cert-tags">
+              <span class="cert-tag">Python Programming</span>
+              <span class="cert-tag">Object-Oriented</span>
+              <span class="cert-tag">Software Logic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+          <p class="section-subtitle">Interested in discussing software engineer openings, collaboration, or technical projects? Reach out anytime!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Contact Methods & Direct Info -->
+          <div class="contact-info-panel">
+            <h3 class="contact-panel-title">Get In Touch</h3>
+            <p class="contact-panel-desc">
+              I am actively seeking software engineering roles and internships. Feel free to send an email, connect on LinkedIn, or drop a message via the form.
+            </p>
+
+            <div class="contact-cards-list">
+              <!-- Email Card -->
+              <div class="contact-method-card">
+                <div class="method-icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="method-info">
+                  <span class="method-label">Direct Email</span>
+                  <a href="mailto:reddymanasa0271@gmail.com" class="method-value" id="contactEmailLink">reddymanasa0271@gmail.com</a>
+                </div>
+                <button class="btn-copy" id="btnCopyEmail" title="Copy email address" aria-label="Copy email address">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+
+              <!-- LinkedIn Card -->
+              <div class="contact-method-card">
+                <div class="method-icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.2a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+                </div>
+                <div class="method-info">
+                  <span class="method-label">LinkedIn Profile</span>
+                  <a href="https://www.linkedin.com/in/mukkamalla-manasa-reddy-b2181527a" target="_blank" rel="noopener noreferrer" class="method-value">linkedin.com/in/mukkamalla-manasa-reddy</a>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div class="contact-method-card">
+                <div class="method-icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="method-info">
+                  <span class="method-label">Location</span>
+                  <span class="method-value">Andhra Pradesh, India</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resume Download Callout -->
+            <div class="resume-callout">
+              <div class="callout-text">
+                <strong>Need a physical or PDF copy?</strong>
+                <p>Download my updated resume formatted for recruiters and hiring managers.</p>
+              </div>
+              <a href="assets/Manasa_Reddy_Resume.pdf" download="M_Manasa_Reddy_Resume.pdf" class="btn btn-secondary btn-sm" id="btnContactResume">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact Form -->
+          <div class="contact-form-panel">
+            <div class="form-wrapper">
+              <h3 class="form-title">Send a Message</h3>
+
+              <!-- Live Email Integration Notice -->
+              <div class="form-demo-notice">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span><strong>Direct Email Delivery:</strong> Messages sent from this form are delivered directly to <em>reddymanasa0271@gmail.com</em> with direct reply-to support.</span>
+              </div>
+
+              <!-- Contact Form -->
+              <form id="contactForm" class="contact-form" novalidate>
+                <!-- Name Field -->
+                <div class="form-group">
+                  <label for="userName">Full Name <span class="required">*</span></label>
+                  <div class="input-wrap">
+                    <input type="text" id="userName" name="name" class="form-input" placeholder="e.g. Sarah Jenkins" required minlength="2">
+                  </div>
+                  <span class="field-error" id="nameError" aria-live="polite"></span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                  <label for="userEmail">Email Address <span class="required">*</span></label>
+                  <div class="input-wrap">
+                    <input type="email" id="userEmail" name="email" class="form-input" placeholder="name@example.com" required>
+                  </div>
+                  <span class="field-error" id="emailError" aria-live="polite"></span>
+                </div>
+
+                <!-- Subject Field -->
+                <div class="form-group">
+                  <label for="userSubject">Subject <span class="required">*</span></label>
+                  <div class="input-wrap">
+                    <input type="text" id="userSubject" name="subject" class="form-input" placeholder="Opportunity / Project Collaboration" required minlength="3">
+                  </div>
+                  <span class="field-error" id="subjectError" aria-live="polite"></span>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                  <label for="userMessage">Message <span class="required">*</span></label>
+                  <div class="input-wrap">
+                    <textarea id="userMessage" name="message" class="form-textarea" rows="4" placeholder="Write your message here..." required minlength="10"></textarea>
+                  </div>
+                  <span class="field-error" id="messageError" aria-live="polite"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-block" id="btnSubmitForm">
+                  <span>Send Message</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+              </form>
+
+              <!-- Form Feedback Message Box -->
+              <div id="formStatusMsg" class="form-status-msg" aria-live="polite" style="display: none;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Project Details Modal -->
+  <div id="projectModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal dialog">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="modal-content" id="modalContent">
+        <!-- Dynamically injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="toast" role="alert" aria-live="assertive">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message" id="toastMsg">Notification message</span>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top" aria-label="Scroll back to top" title="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-badge">MR</span>
+          <span class="logo-text">Manasa<span class="text-accent">.dev</span></span>
+        </div>
+        <p class="footer-tagline">Aspiring Software Engineer & Data Science Graduate.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Mukkamalla Manasa Reddy. All rights reserved.</p>
+        <p class="footer-credit">Crafted with HTML5, CSS3 & JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
