@@ -122,6 +122,20 @@ async function startServer() {
     console.log('----------------------------------------------------');
   });
 
+  // Surface startup failures (e.g. port already in use) clearly instead of crashing silently
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`❌ [Server Error] Port ${PORT} is already in use.`);
+      console.error(`   Stop the process using port ${PORT} or set a different PORT in backend/.env.`);
+    } else if (err.code === 'EACCES') {
+      console.error(`❌ [Server Error] Permission denied binding to port ${PORT}.`);
+      console.error('   Choose a port above 1024 or run with elevated privileges.');
+    } else {
+      console.error('❌ [Server Error] Failed to start HTTP server:', err.message);
+    }
+    process.exit(1);
+  });
+
   // Graceful shutdown handling
   function handleGracefulShutdown(signal) {
     console.log(`\n[Process] Received ${signal}. Shutting down gracefully...`);

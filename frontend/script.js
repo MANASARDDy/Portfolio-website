@@ -323,6 +323,67 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
+  // 6.5 BACKEND HEALTH CHECK (detects an offline backend early)
+  // ==========================================================================
+  const BACKEND_BASE = (window.PORTFOLIO_API_URL || 'http://localhost:5000').replace(/\/$/, '');
+  const backendBanner = document.createElement('div');
+  backendBanner.id = 'backendStatusBanner';
+  backendBanner.style.cssText = 'display:none;margin:16px auto;max-width:640px;padding:12px 16px;border-radius:8px;font-size:0.9rem;text-align:center;';
+  backendBanner.setAttribute('role', 'status');
+  backendBanner.setAttribute('aria-live', 'polite');
+
+  async function checkBackendHealth() {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
+    try {
+      const res = await fetch(`${BACKEND_BASE}/api/health`, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      return res.ok;
+    } catch (err) {
+      clearTimeout(timeoutId);
+      return false;
+    }
+  }
+
+  function showBackendBanner(online) {
+    if (!contactForm) return;
+    if (online) {
+      backendBanner.style.display = 'none';
+      backendBanner.innerHTML = '';
+      // Re-enable submit if it was disabled by a previous offline state
+      const submitBtn = document.getElementById('btnSubmitForm');
+      if (submitBtn) submitBtn.disabled = false;
+    } else {
+      backendBanner.style.cssText += 'background:#fef2f2;color:#991b1b;border:1px solid #fecaca;';
+      backendBanner.innerHTML = `
+        <strong>Backend offline:</strong> Could not reach <code>${escapeHtml(BACKEND_BASE)}</code>.<br>
+        Start it with <code>start.bat</code> (project root) or <code>node server.js</code> in <code>backend/</code>, then
+        <button type="button" id="retryBackendBtn" style="margin-left:8px;padding:4px 10px;border:1px solid #991b1b;background:#fff;color:#991b1b;border-radius:6px;cursor:pointer;">Retry connection</button>
+      `;
+      backendBanner.style.display = 'block';
+      const retryBtn = backendBanner.querySelector('#retryBackendBtn');
+      if (retryBtn) {
+        retryBtn.addEventListener('click', async () => {
+          retryBtn.disabled = true;
+          retryBtn.textContent = 'Checking...';
+          const ok = await checkBackendHealth();
+          retryBtn.disabled = false;
+          retryBtn.textContent = 'Retry connection';
+          showBackendBanner(ok);
+          if (ok) showToast('Backend connection restored.');
+        });
+      }
+    }
+    // Insert banner just above the contact form if not already placed
+    if (backendBanner.parentNode !== contactForm.parentNode) {
+      contactForm.parentNode.insertBefore(backendBanner, contactForm);
+    }
+  }
+
+  // Run an initial health check (non-blocking)
+  checkBackendHealth().then(showBackendBanner);
+
+  // ==========================================================================
   // 7. CONTACT FORM VALIDATION & CLIENT-SIDE FEEDBACK
   // ==========================================================================
   if (contactForm) {
@@ -381,18 +442,30 @@ document.addEventListener('DOMContentLoaded', () => {
         message: messageInput.value.trim()
       };
 
-      const API_ENDPOINT = (window.PORTFOLIO_API_URL || 'http://localhost:5000') + '/api/contact';
+      const API_ENDPOINT = BACKEND_BASE + '/api/contact';
 
       try {
-        const response = await fetch(API_ENDPOINT, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
+        // Retry once on a transient network failure before surfacing the error
+      let response = null;
+      let lastNetworkError = null;
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          response = await fetch(API_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          lastNetworkError = null;
+          break;
+        } catch (err) {
+          lastNetworkError = err;
+          if (attempt === 0) await new Promise(r => setTimeout(r, 600));
+        }
+      }
 
-        const data = await response.json().catch(() => null);
+      if (lastNetworkError) throw lastNetworkError;
+
+      const data = await response.json().catch(() => null);
 
         if (response.ok && data && data.success) {
           // Success: Display response and clear form
